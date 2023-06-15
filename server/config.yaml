@@ -1,0 +1,27 @@
+Actions:
+  ENTRY_NOT_FOUND:
+    ByContainerID:
+      - 152dc042452c496007f07ca9127571cb9c29697f42acbfad72324b2bb2e43c98: "STOP"
+      - aa4d8cb407541215bbd4823469cedacdf7405e7d35bc464efa2986e6789f352a: "SKIP"
+    ByContainerImageDigest:
+      - f9a80a55f492e823bf5d51f1bd5f87ea3eed1cb31788686aa99a2fb61a27af6a: "REMOVE"
+      - db8bf6f4fb351aa7a26e27ba2686cf35a6a409f65603e59d4c203e58387dc6b3: "RESTART"
+    ByContainerImageName:
+      - "nginx:latest": "SKIP"
+    Default: "REMOVE"
+
+  INVALID_HASH:
+    ByContainerID:
+      - e4c9e3ae3159524ef7438878a2245bb4f68e16ba26591bbbc1398df64cf3069c: "RESTART"
+      - 583fbe96a66082d938bf14869e83974212c970c9343416945350ebaf7e21e012: "RESTART"
+    ByContainerImageDigest:
+      - cc7a98702852677a2eb9ae751cbfd285a4f0d01975e9cff55a4c90b72993880d: "STOP"
+    ByContainerImageName:
+      - "ubuntu:16.04": "SKIP"
+    Default: "RESTART"
+  
+  NO_WHITELIST:
+    Default: "STOP"
+
+PORT: "50051"
+
